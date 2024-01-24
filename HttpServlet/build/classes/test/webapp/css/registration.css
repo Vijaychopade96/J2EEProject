@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+
+#body{
+	background-color:rgb(198, 222, 244);
+	text-align:center;
+	justify-content:center;
+	margin-left:450px;
+	margin-right:450px;
+	margin-top:30px;
+	border-style: dashed;
+	border-color:grey;
+}
+
+div{
+	font-size: 20px;
+    text-align:left;
+	justify-content:left;
+	padding-left:50px;
+	height:450px;
+}
+
+#button{
+	font-size: 20px;
+    height: 70px;
+    width: 90px;
+    background: linear-gradient(162.5deg,rgb(120, 230, 120) 50%,rgb(221, 126, 186) 50%);
+    border-radius: 10px 20px;
+    margin-left:115px;
+}

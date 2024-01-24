@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+#body{
+	text-align:center;
+	justify-content:center;
+	border-style: dashed;
+	border-color:voilet;
+	margin-left:450px;
+	margin-right:450px;
+	margin-top:30px;
+	height:400px;
+	background-color:rgb(255, 199, 165);
+}

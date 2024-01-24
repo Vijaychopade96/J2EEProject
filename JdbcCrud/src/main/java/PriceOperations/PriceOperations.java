@@ -1,0 +1,59 @@
+package PriceOperations;
+
+import java.sql.*;
+
+public class PriceOperations {
+	static Connection con=null;
+	Statement stmt=null;
+	
+	static {	
+		try {
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/1eja7", "root", "Shafik123");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void maxPrice() {
+    ResultSet rs=null;
+	String query="select * from product_info1 where product_price = (select MAX(product_price) from product_info1)";
+	try {
+		stmt=con.createStatement();
+		rs=stmt.executeQuery(query);
+		System.out.println("ID\t\tNAME\\t\\tPRICE");
+		System.out.println("===================================================");
+		while(rs.next()) {
+			int id=rs.getInt(1);
+			String name=rs.getString(2);
+			double price=rs.getDouble(3);
+			System.out.println(id+"\t\t"+name+"\t\t"+price);
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+}
+	
+	public void minPrice() {
+		 ResultSet rs=null;
+			String query="select * from product_info1 where product_price=(select MIN(product_price) from product_info1";
+			try {
+				stmt=con.createStatement();
+				rs=stmt.executeQuery(query);
+				System.out.println("ID\t\tNAME\\t\\tPRICE");
+				System.out.println("===================================================");
+				while(rs.next()) {
+					int id=rs.getInt(1);
+					String name=rs.getString(2);
+					double price=rs.getDouble(3);
+					System.out.println(id+"\t\t"+name+"\t\t"+price);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
+
+}
